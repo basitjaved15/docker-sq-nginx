@@ -31,8 +31,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ################NGINX Conf#################
 COPY nginx.conf /scripts/nginx.conf
 COPY nginx.conf  /etc/nginx/
-COPY sonarqube.conf /scripts/sonarqube.conf
-COPY sonarqube.conf /etc/nginx/sites-enabled/sonarqube.conf
 COPY certs /scripts/certs
 COPY certs /etc/pki/tls/sonar
 RUN nginx -t
