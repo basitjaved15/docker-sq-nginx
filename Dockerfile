@@ -9,14 +9,9 @@ RUN mkdir -p /var/log/supervisor
 
 ###################SonrQube Conf#####################
 
-#RUN adduser admin sudo
-#RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-#RUN wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.7.0.41497.zip
 RUN wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.2.1.49989.zip
 RUN unzip sonarqube-9.2.1.49989.zip -d /opt/
 RUN mv /opt/sonarqube-9.2.1.49989 /opt/sonarqube
-#RUN mv /opt/sonarqube{-8.7.0.41497,} /opt/sonarqube
 RUN useradd -M -d /opt/sonarqube/ -r -s /bin/bash sonarqube
 RUN sudo usermod -aG sudo sonarqube
 RUN echo 'vm.max_map_count=262144' >> /etc/sysctl.conf
